@@ -1,14 +1,18 @@
+# This program will check given mail_id is vaild or not
+# Import regular expression package
 import re
-
+# Function for valid user input
 def email_Validation(user_ip):
-    if re.match(^(([A-Za-z0-9]+_+)|([A-Za-z0-9]).com, user_ip):
+    # Checking mail pattern
+    if re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$',user_ip):
         return True
     else:
         return False
 
+# Main
 if __name__ == "__main__":
-    userip = input("Enter Email id:")
+    user_ip = input("Enter Email id:")
     if email_Validation(user_ip):
-        print("Given mailid is valid")
+        print("Given mail_id is valid")
     else:
-        print("Given mailid is not valid")
+        print("Given mail_id is not valid")
