@@ -1,23 +1,15 @@
 #Print Next prime Number
-#main Function
-
-def main():
-    num = int(input("Enter the number"))
-    print ("The next prime number is", next_prime(num+1))
-
+# Import prime_no function from prime.py
+from prime import prime_no
 def next_prime(num):
-    return prime_no(num, num*2)
+    if num == 0 or num == 1:
+        num = 1
+    for i in range(num+1, (num*2)+1):
+        if prime_no(i): # Check given num is prime or not
+            num = i
+            return num
 
-#This function checks wheather given number is prime or  not
-def prime_no(a, b):
-    for p in range(a, b):
-        for i in range(2, p):
-            if (p % i) == 0:
-                #return False
-                break
-            else:
-                return p
-            return None
-
+# Main
 if __name__ == "__main__":
-    main()
+    num = int(input("Enter the number"))
+    print ("The next prime number is", next_prime(num))
