@@ -1,15 +1,18 @@
-def palin(str):
-    l_indx=0
-    h_indx =len(str)-1
-    while(h_indx > l_index):
-        if (str[l_indx++]) != (str[h_indx--])):
-            return False
-        else:
+# This program for to check given string is palindorme or not
+# This function to check palindrome
+def palindrome(s):
+        # Reverse the given String
+        reverse = s[::-1]
+        if s == reverse:
             return True
-        return str
-if __name__ == "__main":
-    str = input("String")
-    if palin(str):
-        print("palindorm", str)
+        else:
+            return False
+
+# Main
+if __name__ =="__main__":
+    s = input("String>>>")
+    #print(palindrome(s))
+    if palindrome(s):
+        print("Palindrome")
     else:
-        print("Not palindorm", str)
+        print("Not palindorm")
