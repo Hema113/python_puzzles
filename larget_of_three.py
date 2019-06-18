@@ -1,16 +1,16 @@
 # This program print largest of 3 variable
 # Find largest number function
 def large(a, b, c):
-    if a > b:
+    if a > b and a > c:
         return a
-    elif b > c:
+    elif b > c and b > a:
         return b
     else:
         return c
 
 # Main
 if __name__ == "__main__":
-    a = [21]
-    b = [16]
-    c = [12]
+    a = [90]
+    b = [30]
+    c = [21]
     print("large_num-->>",large(a, b, c))
