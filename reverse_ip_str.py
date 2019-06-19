@@ -3,7 +3,7 @@
 def reverse(ip):
     rev = ip.split()
     r=rev[::-1]
-    return r
+    return " ".join(r)
 
 # Main
 if __name__ == "__main__":
