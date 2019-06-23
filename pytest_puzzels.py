@@ -12,7 +12,9 @@ from radius_circle import radius_circle
 from reverse_ip_str import reverse
 from sum_odd_even import odd_even
 from denomination import denomination
-from circle_circumference import circumference_circle
+#from circle_circumference import circumference_circle
+from firstname import firstname
+from set import eliminate
 
 @pytest.mark.parametrize("input,output",
                             [
@@ -200,14 +202,35 @@ def test_denomination(input,expected_output):
 # def test_div_7(input1,input2,output):
 #     assert div_7(input1,input2) == output
 
-@pytest.mark.parametrize("input_1,expected_output",
-                             [
-                               (4, 25.12),
-                               (7, 43.96),
-                               (14, 87.92),
-                               (16, 100.48),
-                               (100, 682.00)
-                             ]
+#@pytest.mark.parametrize("input_1,expected_output",
+#                              [
+#                                (4, 25.12),
+#                                (7, 43.96),
+#                                (14, 87.92),
+#                                (16, 100.48),
+#                                (100, 682.00)
+#                              ]
+#                         )
+# def test_circumference_circle(input_1, expected_output):
+#     assert circumference_circle(input_1) == expected_output
+
+@pytest.mark.parametrize("input,output",
+                            [
+                            ("Hema chandran", "Hi Hema"),
+                            ("jayanth sn", "Hi jayanth"),
+                            ("krish kumar", "Hi krish")
+                            ]
                         )
-def test_circumference_circle(input_1, expected_output):
-    assert circumference_circle(input_1) == expected_output
+def test_firstname(input, output):
+    assert firstname(input) == output
+
+@pytest.mark.parametrize("input, output",
+                            [
+                            ([1, 2, 2, 3, 4, 4, 5], [1, 2, 3, 4, 5]),
+                            ([0, 0, 1, 6, 6, 7, 8, 9],  [0, 1, 6, 7, 8, 9]),
+                            ([55, 55, 55, 55], [55])
+                            ]
+                        )
+
+def test_eliminate(input, output):
+    assert eliminate(input) == output
