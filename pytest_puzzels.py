@@ -15,6 +15,7 @@ from denomination import denomination
 #from circle_circumference import circumference_circle
 from firstname import firstname
 from set import eliminate
+from array_1 import array_row
 
 @pytest.mark.parametrize("input,output",
                             [
@@ -234,3 +235,14 @@ def test_firstname(input, output):
 
 def test_eliminate(input, output):
     assert eliminate(input) == output
+
+@pytest.mark.parametrize("input1, input2, output",
+                            [
+                            (3, 5, [[0, 0, 0, 0, 0],[0, 1, 2, 3, 4],[0, 2, 4, 6, 8]]),
+                            (4, 6, [[0, 0, 0, 0, 0, 0], [0, 1, 2, 3, 4, 5], [0, 2, 4, 6, 8, 10],[0, 3, 6, 9, 12, 15]]),
+                            (2, 2, [[0, 0], [0, 1]])
+                            ]
+                        )
+
+def test_array_row(input1, input2, output):
+    assert array_row(input1, input2) == output
