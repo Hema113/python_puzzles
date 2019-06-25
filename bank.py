@@ -1,19 +1,20 @@
-def deposit(in_put):
+def deposit():
     current_bal = 0
     while True:
-    #in_put = input("Enter the amount>>>").split()
+        in_put = input("Enter the amount>>>").split()
         if not in_put:
             break;
 
-        inp = int(in_put[1])
-        if in_put[0] == "d":
-            current_bal += inp
-        elif in_put[0] == "w":
-            current_bal -= inp
+        amount = int(in_put[1])
+        if in_put[0] == "d" or in_put[0] == "D":
+            current_bal += amount
+        elif in_put[0] == "w" or in_put[0] == "W":
+            current_bal -= amount
+        #elif in_put == 'exit':
+        #    break
 
     return current_bal
 
 
 if __name__ == "__main__":
-    in_put = input("Enter the amount>>>").split()
-    print(deposit(in_put))
+    print("Balance>>>>",deposit())
